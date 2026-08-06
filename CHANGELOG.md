@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.13.0] 2026-08-06
+### Added
+- Turkish translations from [Weblate](https://hosted.weblate.org/projects/thegoldeconomy/). 
+
 ## [1.12.1] 2026-04-20
 
 ### Fixed
@@ -29,7 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Polish language
 - Tamil language
 
-[unreleased]: https://github.com/confusedalex/GoldEconomy/compare/v1.12.1...HEAD
+[unreleased]: https://github.com/confusedalex/GoldEconomy/compare/v1.13.0...HEAD
+[1.13.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.12.1...v1.13.0
 [1.12.1]: https://github.com/confusedalex/GoldEconomy/compare/v1.12.0...v1.12.1
 [1.12.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.10.0...v1.11.0
