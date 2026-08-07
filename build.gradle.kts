@@ -10,7 +10,7 @@ plugins {
 
 group = "dev.confusedalex"
 version = "1.13.0"
-val targetApiVersion = "1.21.11"
+val targetApiVersion = "26.1.2"
 
 repositories {
     mavenCentral()
@@ -38,18 +38,18 @@ dependencies {
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
 
     // Tests
-    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.110.0") {
+    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v${targetApiVersion}:4.115.0") {
         // Exclude the JetBrains annotations to prevent conflicts
         exclude(group = "org.jetbrains", module = "annotations")
     }
-    testImplementation("io.papermc.paper:paper-api:${targetApiVersion}-R0.1-SNAPSHOT")
-    testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
+    testImplementation("io.papermc.paper:paper-api:${targetApiVersion}.build.+")
+    testImplementation("org.junit.jupiter:junit-jupiter:6.1.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
     withSourcesJar()
     withJavadocJar()
 }
@@ -72,12 +72,12 @@ tasks {
 
     compileTestJava {
         options.encoding = "UTF-8"
-        sourceCompatibility = "21"
-        targetCompatibility = "21"
+        sourceCompatibility = "25"
+        targetCompatibility = "25"
     }
 
     compileTestKotlin {
-        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_25)
     }
 
     // Disable the default JAR task
