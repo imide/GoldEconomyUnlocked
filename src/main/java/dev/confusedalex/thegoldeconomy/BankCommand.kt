@@ -68,6 +68,7 @@ class BankCommand(val eco: EconomyImplementer, val bundle: ResourceBundle, val u
     }
 
     @Subcommand("pay")
+    @CommandAlias("pay")
     @Description("{@@command.info.pay}")
     @CommandPermission("thegoldeconomy.pay")
     fun pay(commandSender: CommandSender, target: OfflinePlayer, amount: Int) {
