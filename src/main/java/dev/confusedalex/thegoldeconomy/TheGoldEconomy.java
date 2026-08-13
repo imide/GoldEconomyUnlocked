@@ -2,6 +2,8 @@ package dev.confusedalex.thegoldeconomy;
 
 import co.aikar.commands.Locales;
 import co.aikar.commands.PaperCommandManager;
+import io.papermc.paper.ServerBuildInfo;
+import net.kyori.adventure.key.Key;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,6 +22,11 @@ public class TheGoldEconomy extends JavaPlugin {
     public void onEnable() {
         // Config
         saveDefaultConfig();
+
+        if (isFolia()) {
+            getLogger().info("Folia detected."); // todo: i18n
+
+        }
 
         // Registering Command using ACF
         PaperCommandManager manager = new PaperCommandManager(this);
@@ -105,5 +112,9 @@ public class TheGoldEconomy extends JavaPlugin {
         vaultHook.unhook();
 
         getLogger().info("TheGoldEconomy disabled.");
+    }
+
+    private static boolean isFolia() {
+        return ServerBuildInfo.buildInfo().isBrandCompatible(Key.key("papermc", "folia"));
     }
 }
