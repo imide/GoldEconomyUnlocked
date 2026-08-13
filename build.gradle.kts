@@ -15,7 +15,7 @@ val targetApiVersion = "26.1.2"
 repositories {
     mavenCentral()
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") // SpigotAPI
-    maven("https://jitpack.io") // VaultAPI
+    maven("https://repo.codemc.io/repository/creatorfromhell/") // VaultUnlockedAPI
     maven("https://repo.glaremasters.me/repository/towny/") // Towny
     maven("https://oss.sonatype.org/content/groups/public/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/") // PlaceholderAPI
@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     // Plugins
-    compileOnly("com.github.MilkBowl:VaultAPI:1.7.1") { isTransitive = false }
+    compileOnly("net.milkbowl.vault:VaultUnlockedAPI:2.20") { isTransitive = false }
     compileOnly("com.palmergames.bukkit.towny:towny:0.101.2.1")
     compileOnly("me.clip:placeholderapi:2.12.3")
 

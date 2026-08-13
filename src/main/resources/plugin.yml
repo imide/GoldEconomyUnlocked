@@ -9,7 +9,7 @@ api-version: 1.18
 main: dev.confusedalex.thegoldeconomy.TheGoldEconomy
 softdepend: [ PlaceholderAPI ]
 loadbefore: [ Towny, NexusAuctionHouse]
-depend: [ Vault ]
+depend: [ VaultUnlocked ]
 
 permissions:
   thegoldeconomy.balance:
