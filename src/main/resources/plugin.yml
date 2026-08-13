@@ -4,12 +4,13 @@ version: "1.13.0"
 description: A simple gold based Economy plugin that just works.
 author: ConfusedAlex
 api-version: 1.18
+folia-supported: true
 
 # Data
 main: dev.confusedalex.thegoldeconomy.TheGoldEconomy
 softdepend: [ PlaceholderAPI ]
 loadbefore: [ Towny, NexusAuctionHouse]
-depend: [ VaultUnlocked ]
+depend: [ Vault ]
 
 permissions:
   thegoldeconomy.balance:

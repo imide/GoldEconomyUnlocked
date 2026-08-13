@@ -54,6 +54,13 @@ java {
     withJavadocJar()
 }
 
+runPaper.folia.registerTask {
+    version = targetApiVersion
+    downloadPlugins {
+        url("https://github.com/TheNewEconomy/VaultUnlocked/releases/download/2.20.1/VaultUnlocked-2.20.1.jar")
+    }
+}
+
 tasks {
     build {
         dependsOn(shadowJar)
@@ -107,6 +114,7 @@ tasks {
             url("https://github.com/TheNewEconomy/VaultUnlocked/releases/download/2.20.1/VaultUnlocked-2.20.1.jar")
         }
         minecraftVersion(targetApiVersion)
+
     }
 }
 
