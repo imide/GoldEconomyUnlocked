@@ -10,17 +10,17 @@ plugins {
 
 group = "dev.confusedalex"
 version = "1.13.0"
-val targetApiVersion = "26.1.2"
+val targetApiVersion = "26.2"
 
 repositories {
     mavenCentral()
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") // SpigotAPI
+//    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") // SpigotAPI
+    maven("https://repo.papermc.io/repository/maven-public/") // MockBukkit and Paper API
     maven("https://repo.codemc.io/repository/creatorfromhell/") // VaultUnlockedAPI
     maven("https://repo.glaremasters.me/repository/towny/") // Towny
     maven("https://oss.sonatype.org/content/groups/public/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/") // PlaceholderAPI
     maven("https://repo.aikar.co/content/groups/aikar/") // ACF
-    maven("https://repo.papermc.io/repository/maven-public/") // MockBukkit
 }
 
 dependencies {
@@ -30,7 +30,7 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.12.3")
 
     // Internal
-    compileOnly("org.spigotmc:spigot-api:${targetApiVersion}-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:${targetApiVersion}.build.+")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.4.10")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
@@ -38,11 +38,11 @@ dependencies {
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
 
     // Tests
-    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v${targetApiVersion}:4.115.0") {
+    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v${targetApiVersion}:4.116.1") {
         // Exclude the JetBrains annotations to prevent conflicts
         exclude(group = "org.jetbrains", module = "annotations")
     }
-    testImplementation("io.papermc.paper:paper-api:${targetApiVersion}.build.+")
+
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
@@ -62,12 +62,12 @@ tasks {
     compileJava {
         options.encoding = "UTF-8"
         options.compilerArgs.add("-parameters")
-        sourceCompatibility = "17"
-        targetCompatibility = "17"
+        sourceCompatibility = "25"
+        targetCompatibility = "25"
     }
 
     compileKotlin {
-        compilerOptions.jvmTarget.set(JvmTarget.JVM_17)
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_25)
     }
 
     compileTestJava {
@@ -104,7 +104,7 @@ tasks {
 
     runServer {
         downloadPlugins {
-            url("https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar")
+            url("https://github.com/TheNewEconomy/VaultUnlocked/releases/download/2.20.1/VaultUnlocked-2.20.1.jar")
         }
         minecraftVersion(targetApiVersion)
     }
