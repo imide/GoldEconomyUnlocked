@@ -14,7 +14,6 @@ val targetApiVersion = "1.21.11"
 
 repositories {
     mavenCentral()
-//    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") // SpigotAPI
     maven("https://repo.papermc.io/repository/maven-public/") // MockBukkit and Paper API
     maven("https://repo.codemc.io/repository/creatorfromhell/") // VaultUnlockedAPI
     maven("https://repo.glaremasters.me/repository/towny/") // Towny
