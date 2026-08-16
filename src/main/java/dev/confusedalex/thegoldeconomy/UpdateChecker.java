@@ -2,8 +2,9 @@ package dev.confusedalex.thegoldeconomy;
 
 // 102242
 
-import org.bukkit.Bukkit;
+import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
 import org.bukkit.plugin.java.JavaPlugin;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,14 +15,16 @@ import java.util.function.Consumer;
 public class UpdateChecker {
     private final JavaPlugin plugin;
     private final int resourceId;
+    private final AsyncScheduler scheduler;
 
     public UpdateChecker(JavaPlugin plugin, int resourceId) {
         this.plugin = plugin;
         this.resourceId = resourceId;
+        this.scheduler = plugin.getServer().getAsyncScheduler();
     }
 
     public void getVersion(final Consumer<String> consumer) {
-        Bukkit.getScheduler().runTaskAsynchronously(this.plugin, () -> {
+        scheduler.runNow(this.plugin, (task) -> {
             try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + this.resourceId).openStream(); Scanner scanner = new Scanner(inputStream)) {
                 if (scanner.hasNext()) {
                     consumer.accept(scanner.next());
