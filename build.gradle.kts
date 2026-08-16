@@ -10,7 +10,7 @@ plugins {
 
 group = "dev.confusedalex"
 version = "1.13.0"
-val targetApiVersion = "26.2"
+val targetApiVersion = "1.21.11"
 
 repositories {
     mavenCentral()
@@ -30,7 +30,7 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.12.3")
 
     // Internal
-    compileOnly("io.papermc.paper:paper-api:${targetApiVersion}.build.+")
+    compileOnly("io.papermc.paper:paper-api:${targetApiVersion}-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.4.10")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
@@ -38,7 +38,8 @@ dependencies {
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
 
     // Tests
-    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v${targetApiVersion}:4.116.1") {
+    // TODO: When updating to the next version of MC, replace "v1.21" with "v${targetApiVersion}" - mockbukkit uploaded 1.21.11 versions under 1.21
+    testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.110.0") {
         // Exclude the JetBrains annotations to prevent conflicts
         exclude(group = "org.jetbrains", module = "annotations")
     }
@@ -49,7 +50,7 @@ dependencies {
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(25))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     withSourcesJar()
     withJavadocJar()
 }
@@ -69,22 +70,22 @@ tasks {
     compileJava {
         options.encoding = "UTF-8"
         options.compilerArgs.add("-parameters")
-        sourceCompatibility = "25"
-        targetCompatibility = "25"
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
     }
 
     compileKotlin {
-        compilerOptions.jvmTarget.set(JvmTarget.JVM_25)
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
     }
 
     compileTestJava {
         options.encoding = "UTF-8"
-        sourceCompatibility = "25"
-        targetCompatibility = "25"
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
     }
 
     compileTestKotlin {
-        compilerOptions.jvmTarget.set(JvmTarget.JVM_25)
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
     }
 
     // Disable the default JAR task
