@@ -16,37 +16,36 @@ starting with 1.12.11. Spigot users are advised to use Paper instead.
 ### Changed
 - **Breaking:** Switched Spigot API to Paper API 1.12.11.
 
-## [1.13.0] 2026-08-06
+## [1.13.0] - 2026-08-06
 ### Added
 - Turkish translations from [Weblate](https://hosted.weblate.org/projects/thegoldeconomy/). 
 
-## [1.12.1] 2026-04-20
+## [1.12.1] - 2026-04-20
 
 ### Fixed
 - Spelling mistake in Bulgarian
 
-## [1.12.0] 2026-03-07
+## [1.12.0] - 2026-03-07
 
 ### Added
 
 - "/bal" alias for "/bank balance"
 
-## [1.11.0] 2026-02-15
+## [1.11.0] - 2026-02-15
 
 ### Added
 
 - Russian language
 
-## [1.10.0] 2025-11-13
+## [1.10.0] - 2025-11-13
 
 ### Added
 
 - Polish language
 - Tamil language
 
-[unreleased]: https://github.com/confusedalex/GoldEconomy/compare/v1.13.0...HEAD
-[1.13.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.12.1...v1.13.0
-[1.12.1]: https://github.com/confusedalex/GoldEconomy/compare/v1.12.0...v1.12.1
-[1.12.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.11.0...v1.12.0
-[1.11.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.10.0...v1.11.0
-[1.10.0]: https://github.com/confusedalex/GoldEconomy/compare/v1.9.5...1.10.0
+[1.13.0]: https://github.com/confusedalex/GoldEconomy/releases/tag/v1.13.0
+[1.12.1]: https://github.com/confusedalex/GoldEconomy/releases/tag/v1.12.1
+[1.12.0]: https://github.com/confusedalex/GoldEconomy/releases/tag/v1.12.0
+[1.11.0]: https://github.com/confusedalex/GoldEconomy/releases/tag/v1.11.0
+[1.10.0]: https://github.com/confusedalex/GoldEconomy/releases/tag/1.10.0
