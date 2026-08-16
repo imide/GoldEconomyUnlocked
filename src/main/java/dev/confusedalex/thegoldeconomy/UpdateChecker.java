@@ -3,8 +3,8 @@ package dev.confusedalex.thegoldeconomy;
 // 102242
 
 import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class UpdateChecker {
     }
 
     public void getVersion(final Consumer<String> consumer) {
-        scheduler.runNow(this.plugin, (_) -> {
+        scheduler.runNow(this.plugin, (task) -> {
             try (InputStream inputStream = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + this.resourceId).openStream(); Scanner scanner = new Scanner(inputStream)) {
                 if (scanner.hasNext()) {
                     consumer.accept(scanner.next());
