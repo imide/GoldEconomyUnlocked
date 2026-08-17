@@ -7,14 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 This release drops support for Spigot and now depends on Paper
-starting with 1.12.11. Spigot users are advised to use Paper instead.
+starting with 1.21.11. Spigot users are advised to use Paper instead.
 
 ### Added
 - /pay alias for /bank pay
 - Support [Folia](https://papermc.io/software/folia/)
 
 ### Changed
-- **Breaking:** Switched Spigot API to Paper API 1.12.11.
+- **Breaking:** Switched Spigot API to Paper API 1.21.11.
 
 ## [1.13.0] - 2026-08-06
 ### Added
